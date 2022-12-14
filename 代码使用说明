@@ -1,0 +1,27 @@
+1. 概述: 模仿resnet18结构，将输入加入一层深度变成4通道
+
+2. 数据: 用原始数据
+      训练集: ./lazydata/train (70%)
+      验证集: ./lazydata/vali (30%)
+      测试集: ./lazydata/test
+
+3. 加载数据: load_data.py
+
+4. 训练
+      (0) 如果有原来训练好的模型，需要继续训练，修改#14行原有模型路径，15行注释打上(演示视频里注释错了13行的)
+      (1) # 23-31行设置超参数，根据设备显存设置batch大小。mean和std要和predict中的一样
+          # 超参数设置
+            EPOCH = 4  # 遍历数据集次数
+            LR = 0.001  # 学习率
+            Milestones = [135, 185]
+            batch_size = 16 # batch大小
+            Debug = False
+
+            mean = [0.485, 0.456, 0.406, 0.4]
+            std = [0.229, 0.224, 0.225, 0.2]
+       (2) 直接运行train.py即可，loss输出日志在log.txt中
+       (3) 模型文件生成在model文件夹下
+
+5. 预测
+      直接运行predict.py 详见方法参数
+
