@@ -1,3 +1,0 @@
-[Epoch:1/4, Batch:1/892] Loss: 0.161562
-[Epoch:1/4, Batch:2/892] Loss: 0.275292
-[Epoch:1/4, Batch:3/892] Loss: 0.230093
